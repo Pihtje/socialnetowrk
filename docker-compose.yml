@@ -1,0 +1,42 @@
+version: '3' 
+services:
+  frontend:
+    container_name: frontend
+    # image: node:lts
+    build: 
+      context: frontend
+      dockerfile: Dockerfile-multistage
+    networks:
+      - internet
+      - appnet
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    tty: true
+    restart: unless-stopped
+
+
+  backend:
+    container_name: backend
+    build: ./backend
+    networks:
+      - appnet
+    ports:
+      - "8000:8000"
+    volumes:
+      - "pictures:/backend/images"
+      # - "/db/migrations/sqlite:/db/migrations/sqlite"
+    restart: unless-stopped
+
+volumes:
+  pictures:
+  # database:
+  
+networks:
+  internet:
+    name: internet
+    driver: bridge
+  appnet:
+    name: appnet
+    driver: bridge
