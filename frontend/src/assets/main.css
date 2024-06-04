@@ -1,0 +1,110 @@
+@import "./base.css";
+
+#app {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  align-content: center;
+  font-weight: normal;
+}
+
+a,
+label,
+.green {
+  text-decoration: none;
+  color: #00bd7e;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: #00bd7e33;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+.welcome {
+  width: 50%;
+}
+.formDiv {
+  margin: auto;
+  height: fit-content;
+  width: 20rem;
+  background-color: #101010;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 1rem 0.01rem #00bd7e;
+}
+.formContent{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  position: relative;
+}
+.formField, .formButton, .commentForm, .postForm, .groupForm {
+  color: #00bd7e;
+  background-color: #1b1b1b;
+  border: 0;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem #1a1a1a4b;
+}
+.formButton {
+  height: 2rem;
+  width: 6rem;
+}
+.formButton:hover{
+  color: #101010;
+  background-color: #00bd7e;
+  cursor: pointer;
+}
+.notification {
+  background-color: #1b1b1b;
+  padding: 0.5rem;
+  border: 1px solid #00bd7e;
+  border-radius: 1rem;
+  margin: 0.5rem;
+}
+
+.accept, .decline, .middle, .dismiss{
+  background-color: #00bd7e;
+  border: 1px solid  #00bd7e;
+  height: 1.5rem;
+}
+
+.accept{
+  border-radius: 1rem 0 0 1rem;
+}
+.accept:hover, .decline:hover, .middle:hover, .dismiss:hover {
+  background-color: #101010;
+  color: #00bd7e;
+}
+.decline{
+  border-radius: 0 1rem 1rem 0 ;
+}
+.middle{
+  margin: 0 1px;
+}
+.dismiss{
+  border-radius: 1rem;
+}
